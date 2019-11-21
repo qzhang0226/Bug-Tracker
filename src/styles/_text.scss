@@ -1,0 +1,50 @@
+$mainWhite: #fff;
+$mainBlack: #000;
+$mainBlue: #2D9CDB;
+
+@mixin textBasic($color, $size, $style, $weight) {
+    color: $color;
+    font: {
+        size: $size;
+        style: $style;
+        weight: $weight;
+    }
+}
+
+h2 {
+    @include textBasic($mainWhite, 2.25rem, normal, normal);
+}
+
+.reset-pw {
+    @include textBasic($mainBlack, 1.5rem, normal, normal);
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+hr {
+    text-align: center;
+    width: 294px;
+}
+
+.bt-sign-in {
+    position: absolute;
+    top: 80%;
+    left: 20%;
+}
+
+.google-text {
+    @include textBasic($mainBlack, 1.125rem, normal, normal);
+    position: absolute;
+    right: 18%;
+    top: -4%;
+}
+
+.register-text {
+    @include textBasic($mainBlack, 1.5rem, normal, normal);
+    margin-top: 4rem;
+    .sign-up-text {
+        @include textBasic($mainBlue, 1.5rem, normal, normal);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,20 @@
+$mainWhite: #fff;
+
+@mixin inputBasic($height, $border, $border-radius, $background-color) {
+    height: $height;
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+input {
+    @include inputBasic(50px, none, 10px, $mainWhite);
+    width: 100%;
+    max-width: 294px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: .5rem;
+    &:focus {
+        outline: none;
+    }
+}

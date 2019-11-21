@@ -1,0 +1,38 @@
+$mainBlue: #2D9CDB;
+$mainWhite: #fff;
+
+@mixin buttonBasic($width, $height, $border, $border-radius, $background-color) {
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: $border-radius;
+    background-color: $background-color;
+}
+
+.btn-next {
+    @include buttonBasic(100%, 50px, none, 10px, $mainBlue);
+    max-width: 294px;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-google {
+    @include buttonBasic(156px, 50px, none, 10px, $mainWhite);
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 1.6rem;
+    margin-left: 7.2rem;
+    cursor: pointer;
+    img {
+        width: 40px;
+        height: 38px;
+        position: absolute;
+        left: 18%;
+        top: 14%;
+    }
+}
