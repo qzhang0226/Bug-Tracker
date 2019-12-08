@@ -1,0 +1,106 @@
+$mainWhite: #fff;
+$mainBlack: #000;
+$mainBlue: #2D9CDB;
+
+.login{
+    background: url('../assets/images/login-bg-img.jpg') no-repeat center center fixed; 
+    height: 100vh;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-box {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-width: 429px;
+    max-height: 456px;
+    background: rgba(0,0,0,.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 2rem 0;
+}
+
+.logo-login {
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin textBasic($color, $size, $style, $weight) {
+    color: $color;
+    font: {
+        size: $size;
+        style: $style;
+        weight: $weight;
+    }
+}
+
+h2 {
+    @include textBasic($mainWhite, 2.25rem, normal, normal);
+}
+
+.reset-pw {
+    @include textBasic($mainBlack, 1.5rem, normal, normal);
+    margin-top: 3rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+hr {
+    text-align: center;
+}
+
+.bt-sign-in {
+    position: absolute;
+    top: 90.5%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.google-text {
+    @include textBasic($mainBlack, 1.125rem, normal, normal);
+    position: absolute;
+    right: -3%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.register-text {
+    @include textBasic($mainBlack, 1.5rem, normal, normal);
+    margin-top: 4rem;
+    .sign-up-text {
+        @include textBasic($mainBlue, 1.5rem, normal, normal);
+        cursor: pointer;
+    }
+}
+
+::placeholder {
+    opacity: 0.6;
+}
+
+input:disabled {
+    color: black;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+form {
+    position: relative;
+}
+
+@media only screen and (max-width: 320px) {
+    .logo-login {
+        top: -6%;
+    }
+    .register-text {
+        margin-top: 1rem !important;
+    }
+}
