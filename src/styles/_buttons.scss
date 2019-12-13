@@ -38,3 +38,7 @@ $mainWhite: #fff;
         transform: translate(-50%, -50%);
     }
 }
+
+button:focus {
+    outline: none;
+}

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import Button from './share/Button';
+import Button from '../share/Button';
 import { bindActionCreators } from "redux";
-import { FormInput, AppActions } from '../types/forms';
-import { AppState } from '../store';
+import { FormInput, AppActions } from '../../types/forms';
+import { AppState } from '../../store';
 import { ThunkDispatch } from 'redux-thunk';
-import { updateEmail, updatePassword } from '../actions/login'
+import { updateEmail, updatePassword } from '../../actions/login'
 
 interface LoginProps {
     email?: string
@@ -17,8 +17,8 @@ interface LoginState {
 
 type Props = LoginProps & LinkDispatchProps & LinkStateProps;
 
-const logo: string = require("../assets/images/logo.png");
-const googleLogo: string = require("../assets/images/icon-google.svg");
+const logo: string = require("../../assets/images/logo.png");
+const googleLogo: string = require("../../assets/images/icon-google.svg");
 
 export class Login extends Component<Props, LoginState> {
 
@@ -32,7 +32,7 @@ export class Login extends Component<Props, LoginState> {
         this.handleNext = this.handleNext.bind(this);
         this.handleChangeClick = this.handleChangeClick.bind(this);
         this.handleSignIn = this.handleSignIn.bind(this);
-
+        this.handleGoogle = this.handleGoogle.bind(this);
     }
 
     handleEmailChange(e: any) {
@@ -63,8 +63,10 @@ export class Login extends Component<Props, LoginState> {
     handleSignIn(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
         e.preventDefault();
         const { email, password } = this.props;
-        console.log(email)
-        console.log(password)
+    }
+
+    handleGoogle(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
+        e.preventDefault();
     }
 
     render() {
@@ -90,7 +92,7 @@ export class Login extends Component<Props, LoginState> {
                             <div>
                                 <hr />
                                 <p className="bt-sign-in">Sign in using</p> 
-                                <Button className="btn-google">
+                                <Button className="btn-google" onClick={this.handleGoogle}>
                                     <span><img src={googleLogo} alt="Google"/></span>
                                     <p className="google-text">Google</p>
                                 </Button>
@@ -98,7 +100,6 @@ export class Login extends Component<Props, LoginState> {
                             :
                             <Button className="btn-next" onClick={this.handleSignIn}>SIGN IN</Button>
                         }
-
                     </form>
                     {
                         !nextClicked &&
